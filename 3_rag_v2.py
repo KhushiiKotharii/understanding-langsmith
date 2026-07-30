@@ -3,10 +3,11 @@
 import os
 from dotenv import load_dotenv
 
-from langsmith import traceable  # <-- key import
+from langsmith import traceable  # <-- key import 
+#with the help of tracelable ,we can trace any normal pyhton fucntion with the hlep of this(even though it does not contain a runnable)
 
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
@@ -17,6 +18,8 @@ from langchain_core.output_parsers import StrOutputParser
 # LANGCHAIN_TRACING_V2=true
 # LANGCHAIN_API_KEY=...
 # LANGCHAIN_PROJECT=pdf_rag_demo
+
+os.environ['LANGCHAIN_PROJECT']='RAG Chatbot'
 
 load_dotenv()
 
